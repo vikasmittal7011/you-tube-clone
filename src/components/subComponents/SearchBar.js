@@ -10,8 +10,12 @@ const SearchBar = () => {
   return (
     <Paper
       component="form"
-      onSubmit={() => {
-        navigate(`/`);
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (query) {
+          navigate(`/search/${query}`);
+          setQuery("")
+        }
       }}
       sx={{
         border: "1px solid #e3e3e3",
