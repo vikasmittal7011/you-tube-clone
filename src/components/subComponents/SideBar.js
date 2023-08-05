@@ -8,8 +8,8 @@ const SideBar = ({ category, setCategory }) => {
     <Stack
       sx={{
         overflow: "auto",
-        height: { sx: "auto", md: "95%" },
-        flexDirection: { ms: "column" },
+        height: { xs: "auto", md: "95%" },
+        flexDirection: {xs: "row", sm: "row", md: "column" },
       }}
     >
       {categories?.map((cate, i) => (
@@ -19,9 +19,10 @@ const SideBar = ({ category, setCategory }) => {
           style={{
             color: "white",
             background: cate.name === category && "#FC1503",
+            width: {sm: "152px"}
           }}
-          onClick={()=>{
-            setCategory(cate.name)
+          onClick={() => {
+            setCategory(cate.name);
           }}
         >
           <span
